@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<!DOCTYPE struts-config
+	 PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" 
+	 "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+	
+<struts-config>
+		<form-beans>
+			<!-- AddActionForm的相关配置-->
+			<form-bean name="userForm"  type="org.apache.struts.action.DynaActionForm" >
+				
+				<form-property name="name" type="java.lang.String"/>
+				<form-property name="pwd" type="java.lang.String"/>
+			</form-bean>
+		</form-beans>
+		
+		<action-mappings>
+			<!-- AddAction的相关配置-->
+					<!-- 如果action中的方法不是默认的excute() 则要再配置  parameter="method"-->
+			<action name="userForm" path="/login" scope="request"
+				     type="com.zoomkey.web.action.UserAction" parameter="method">
+				<forward name="error" path="/jsp/login.jsp" />
+				<forward name="success" path="/jsp/success.jsp" />
+			</action>
+		 
+			<!-- AddAction的相关配置-->
+					<!-- 如果action中的方法不是默认的excute() 则要再配置  parameter="method"-->
+			<action name="userForm" path="/xianshi" scope="request"
+				     type="com.zoomkey.web.action.UserListAction"  >
+				<forward name="error" path="/jsp/login.jsp" />
+				<forward name="xianshi" path="/jsp/list.jsp" />
+				<forward name="success" path="/jsp/success.jsp"/>
+			</action>
+		</action-mappings> 
+	</struts-config>

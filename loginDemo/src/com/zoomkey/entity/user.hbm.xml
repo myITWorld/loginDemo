@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+          "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd"> 
+<hibernate-mapping>
+	<class name="com.zoomkey.entity.User" table="t_user" catalog="loginDemo">
+		   <id name="id" type="java.lang.Integer">
+            <column name="id_" />
+            <generator class="native" />
+        </id>
+        <proerty name="name" type="java.lang.String"> 
+        		<column name="name_" length="50" not-null="true"></column>
+        </proerty>
+         <proerty name="pwd" type="java.lang.String"> 
+        		<column name="pwd_" length="50" not-null="true"></column>
+        </proerty> 
+	</class>
+</hibernate-mapping>
